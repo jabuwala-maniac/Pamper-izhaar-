@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Period Check ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="title">❤️ Period Check ❤️</h1>
+
+<p class="subtitle">
+On a scale of <b>1 - 10</b>...
+<br><br>
+How bad are your cramps today?
+</p>
+
+<img class="gif"
+src="https://media.tenor.com/4mN7m6nB4NMAAAAC/bear-hug.gif">
+
+<br><br>
+
+<input
+type="range"
+min="1"
+max="10"
+value="5"
+id="painSlider"
+oninput="updateValue()">
+
+<h2 id="number">5</h2>
+
+<p id="message">
+You're so strong. ❤️
+</p>
+
+<br>
+
+<button onclick="location.href='page4.html'">
+Next ➜
+</button>
+
+</div>
+
+<script>
+
+function updateValue(){
+
+let value=document.getElementById("painSlider").value;
+
+document.getElementById("number").innerHTML=value;
+
+let text="";
+
+if(value<=2){
+
+text="I'm glad it isn't hurting too much today. ❤️";
+
+}
+
+else if(value<=4){
+
+text="Aww... I wish I could make you feel better. 🩷";
+
+}
+
+else if(value<=6){
+
+text="Sending you the biggest hug right now. 🤗";
+
+}
+
+else if(value<=8){
+
+text="I really wish I was there beside you, taking care of you. ❤️";
+
+}
+
+else{
+
+text="Maximum cuddle mode activated! 🥺❤️ If I could, I'd steal all your pain.";
+
+}
+
+document.getElementById("message").innerHTML=text;
+
+}
+
+updateValue();
+
+</script>
+
+</body>
+
+</html>
