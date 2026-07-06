@@ -1,46 +1,112 @@
-const text =
-"I made something special just for you... 💖";
+// ===========================
+// Typing Effect
+// ===========================
 
-let i = 0;
+function typeWriter(id, text, speed = 45) {
+    let i = 0;
+    const element = document.getElementById(id);
 
-function typing(){
+    if (!element) return;
 
-if(i < text.length){
+    element.innerHTML = "";
 
-document.getElementById("typing").innerHTML += text.charAt(i);
+    function typing() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, speed);
+        }
+    }
 
-i++;
+    typing();
+}
 
-setTimeout(typing,70);
+// ===========================
+// Floating Hearts
+// ===========================
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.innerHTML = "❤";
+
+    heart.classList.add("heart");
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize = (15 + Math.random() * 18) + "px";
+
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    }, 9000);
 
 }
 
+setInterval(createHeart, 500);
+
+// ===========================
+// Sakura Petals
+// ===========================
+
+function createPetal(){
+
+    const petal = document.createElement("div");
+
+    petal.innerHTML = "🌸";
+
+    petal.classList.add("petal");
+
+    petal.style.left = Math.random()*100+"vw";
+
+    petal.style.animationDuration = (8+Math.random()*5)+"s";
+
+    petal.style.fontSize = (18+Math.random()*10)+"px";
+
+    document.body.appendChild(petal);
+
+    setTimeout(()=>{
+
+        petal.remove();
+
+    },13000);
+
 }
 
-typing();
+setInterval(createPetal,900);
 
-function createHeart(){
+// ===========================
+// Sparkles
+// ===========================
 
-const heart=document.createElement("div");
+document.addEventListener("click", function(e){
 
-heart.classList.add("heart");
+    for(let i=0;i<10;i++){
 
-heart.innerHTML="❤";
+        const sparkle=document.createElement("div");
 
-heart.style.left=Math.random()*100+"vw";
+        sparkle.classList.add("sparkle");
 
-heart.style.fontSize=(15+Math.random()*25)+"px";
+        sparkle.style.left=e.clientX+"px";
 
-heart.style.animationDuration=(4+Math.random()*5)+"s";
+        sparkle.style.top=e.clientY+"px";
 
-document.body.appendChild(heart);
+        sparkle.style.animationDelay=(Math.random()*0.2)+"s";
 
-setTimeout(()=>{
+        document.body.appendChild(sparkle);
 
-heart.remove();
+        setTimeout(()=>{
 
-},8000);
+            sparkle.remove();
 
-}
+        },1200);
 
-setInterval(createHeart,350);
+    }
+
+});
