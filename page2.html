@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How Are You Feeling? ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<div class="container">
+
+<h1 class="title">
+Checking In 💖
+</h1>
+
+<p id="typing"></p>
+
+<img
+class="gif"
+src="https://media.tenor.com/F8J8P8xN7i8AAAAC/cute-bear.gif"
+alt="Cute Teddy">
+
+<h2 style="margin-bottom:20px;color:#444;">
+How are you feeling today?
+</h2>
+
+<div class="feeling-buttons">
+
+<button class="choice" onclick="showNext('😊 I\'m glad you're feeling okay. ❤️')">
+😊 I'm okay
+</button>
+
+<button class="choice" onclick="showNext('🥺 Aww... I wish I could give you a hug.')">
+🥺 Not great
+</button>
+
+<button class="choice" onclick="showNext('😭 I wish I was there to take care of you.')">
+😭 Really struggling
+</button>
+
+</div>
+
+<p id="response" style="margin-top:25px;font-size:18px;color:#ff4f93;font-weight:600;"></p>
+
+<button id="nextBtn"
+style="display:none;margin-top:25px;"
+onclick="location.href='page3.html'">
+
+Next ➜
+
+</button>
+
+</div>
+
+<script>
+
+const text="Before anything else... I just wanted to know how you're feeling today. ❤️";
+
+let i=0;
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,45);
+
+}
+
+}
+
+typing();
+
+function showNext(msg){
+
+document.getElementById("response").innerHTML=msg;
+
+document.getElementById("nextBtn").style.display="inline-block";
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+heart.style.animationDuration=(4+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+}
+
+setInterval(createHeart,350);
+
+</script>
+
+</body>
+
+</html>
