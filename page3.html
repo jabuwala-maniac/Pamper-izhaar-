@@ -4,100 +4,122 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Period Check ❤️</title>
+<title>I'm Here For You ❤️</title>
 
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="container fade">
 
-<h1 class="title">❤️ Period Check ❤️</h1>
+<div class="page">
+Page 3 of 4 💖
+</div>
 
-<p class="subtitle">
-On a scale of <b>1 - 10</b>...
-<br><br>
-How bad are your cramps today?
+<div class="progress">
+<span style="width:75%"></span>
+</div>
+
+<h1>Just One More Thing 🧸</h1>
+
+<img
+src="assets/gifs/cuddle.gif.webp"
+class="gif"
+alt="Comfort Teddy">
+
+<p class="question">
+
+Thank you for telling me how you're feeling.
+
+Now tell me...
+
+How painful are your cramps today?
+
 </p>
 
-<img class="gif"
-src="https://media.tenor.com/4mN7m6nB4NMAAAAC/bear-hug.gif">
-
-<br><br>
+<div class="slider-box">
 
 <input
 type="range"
 min="1"
 max="10"
 value="5"
-id="painSlider"
-oninput="updateValue()">
+id="painSlider">
 
-<h2 id="number">5</h2>
+<div id="painValue">
+5
+</div>
 
-<p id="message">
-You're so strong. ❤️
+<div id="painEmoji" style="font-size:40px;">
+😣
+</div>
+
+<p id="painText">
+
+🥹 Right in the middle... Please don't overwork yourself today.
+
 </p>
 
-<br>
+</div>
 
-<button onclick="location.href='page4.html'">
-Next ➜
+<button onclick="next('page4.html')">
+
+Continue ❤️
+
 </button>
 
 </div>
 
+<script src="script.js"></script>
+
 <script>
 
-function updateValue(){
+const slider=document.getElementById("painSlider");
 
-let value=document.getElementById("painSlider").value;
+const number=document.getElementById("painValue");
 
-document.getElementById("number").innerHTML=value;
+const emoji=document.getElementById("painEmoji");
 
-let text="";
+const text=document.getElementById("painText");
 
-if(value<=2){
+const messages={
 
-text="I'm glad it isn't hurting too much today. ❤️";
+1:["😊","That's wonderful! Teddy hopes the rest of your day stays comfortable. ❤️"],
 
-}
+2:["🙂","Just a little discomfort. Drink some water and take it easy. 🌸"],
 
-else if(value<=4){
+3:["🌷","Teddy thinks you deserve a cozy blanket today. 🧸"],
 
-text="Aww... I wish I could make you feel better. 🩷";
+4:["🥹","Take small breaks and don't push yourself too much. ❤️"],
 
-}
+5:["😣","You're doing your best. I'm proud of you. 💖"],
 
-else if(value<=6){
+6:["🥺","Please rest whenever you can. Your comfort matters. 🌸"],
 
-text="Sending you the biggest hug right now. 🤗";
+7:["😢","Teddy wishes he could bring you a warm hug right now. 🤍"],
 
-}
+8:["😭","That's really painful... I hope you can relax today. ❤️"],
 
-else if(value<=8){
+9:["💔","Juzer is telling you to rest and let him take care of everything today. 🧸"],
 
-text="I really wish I was there beside you, taking care of you. ❤️";
+10:["🤗","Maximum teddy hugs activated! You are so strong, and you're deeply loved. ❤️"]
 
-}
+};
 
-else{
+slider.oninput=function(){
 
-text="Maximum cuddle mode activated! 🥺❤️ If I could, I'd steal all your pain.";
+number.innerHTML=this.value;
 
-}
+emoji.innerHTML=messages[this.value][0];
 
-document.getElementById("message").innerHTML=text;
+text.innerHTML=messages[this.value][1];
 
-}
-
-updateValue();
+};
 
 </script>
 
