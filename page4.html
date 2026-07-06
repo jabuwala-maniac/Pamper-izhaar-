@@ -4,144 +4,101 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For You ❤️</title>
+<title>For My Favourite Person ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 </head>
 
-<body>
+<body onload="revealLetter()">
 
-<div class="container">
+<div class="container fade">
 
-<h1 class="title">
-❤️ A Little Message ❤️
-</h1>
+<div class="page">
+Page 4 of 4 💖
+</div>
+
+<div class="progress">
+<span style="width:100%"></span>
+</div>
+
+<h1>You Made It ❤️</h1>
 
 <img
+src="assets/gifs/hug.gif.webp"
 class="gif"
-src="https://media.tenor.com/3kNQ2S6jQzQAAAAC/bear-love.gif"
-alt="Cute Teddy">
+alt="Hug Teddy">
 
-<div id="letter">
+<div class="letter">
 
-<p>Thank you for answering my little questions. ❤️</p>
+<p>🧸 Before I say goodbye... Juzer asked me to tell you something.</p>
 
-<p>I know periods aren't easy.</p>
+<p>My job today was to keep you company for a little while...</p>
 
-<p>I know your body is going through a lot right now.</p>
+<p>But his job is much bigger than mine.</p>
 
-<p>I wish I could be beside you...</p>
+<p>It's to love you, care for you, make you smile, and remind you every single day how precious you are.</p>
 
-<p>Holding your hand.</p>
+<p>I know periods can be exhausting.</p>
 
-<p>Giving you warm hugs.</p>
+<p>I know they can make you feel uncomfortable, tired, emotional, or simply not yourself.</p>
 
-<p>Making sure you're comfortable.</p>
+<p>So today, please be gentle with yourself.</p>
 
-<p>Bringing you your favorite snacks.</p>
+<p>Rest when you need to.</p>
 
-<p>And reminding you that...</p>
+<p>Drink enough water.</p>
 
-<h2 style="color:#ff4f93;">
-You are beautiful. ❤️
-</h2>
+<p>Eat something you enjoy.</p>
 
-<h2 style="color:#ff4f93;">
-You are strong. ❤️
-</h2>
+<p>And if today feels difficult...</p>
 
-<h2 style="color:#ff4f93;">
-You are loved more than you know. ❤️
-</h2>
+<p>Remember that you don't have to go through it alone.</p>
 
-<p>
-So today...
+<p class="highlight">
+
+❤️ Juzer loves you more than words can ever describe. ❤️
+
 </p>
 
 <p>
-Please don't worry about anything.
+
+He's incredibly proud of how strong you are.
+
 </p>
 
 <p>
-Rest well.
+
+Even on the hardest days...
+
+You'll always be his favourite person.
+
+🥹❤️
+
 </p>
-
-<p>
-Drink some water.
-</p>
-
-<p>
-Take your medicines if needed.
-</p>
-
-<p>
-And remember...
-</p>
-
-<h2 style="color:#ff2d88;">
-
-I'm always here for you.
-
-❤️❤️❤️
-
-</h2>
 
 </div>
 
-<button onclick="hug()">
+<button class="hug-btn" onclick="sendHug()">
 
-🤗 Send Me A Hug
+🤗 Send Me A Teddy Hug
 
 </button>
 
 <h2 id="hugMessage"></h2>
 
+<div class="footer">
+
+Made with ❤️ by Juzer
+
 </div>
 
-<script>
+</div>
 
-function hug(){
-
-document.getElementById("hugMessage").innerHTML=
-
-"❤️ Virtual Hug Delivered ❤️<br><br>I Love You So Much 🥹";
-
-createHearts();
-
-}
-
-function createHearts(){
-
-for(let i=0;i<80;i++){
-
-let heart=document.createElement("div");
-
-heart.innerHTML="❤️";
-
-heart.style.position="fixed";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.top=Math.random()*100+"vh";
-
-heart.style.fontSize=(20+Math.random()*25)+"px";
-
-heart.style.animation="pop 2s forwards";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>heart.remove(),2000);
-
-}
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 
