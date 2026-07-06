@@ -2,120 +2,122 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>How Are You Feeling? ❤️</title>
+<title>Checking On You ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="hearts"></div>
+<div class="container fade">
 
-<div class="container">
+<div class="page">
+Page 2 of 4 💖
+</div>
 
-<h1 class="title">
-Checking In 💖
-</h1>
+<div class="progress">
+<span style="width:50%"></span>
+</div>
 
-<p id="typing"></p>
+<h1>Can I Ask You Something? 🧸</h1>
 
 <img
+src="assets/gifs/teddy-love.gif.webp"
 class="gif"
-src="https://media.tenor.com/F8J8P8xN7i8AAAAC/cute-bear.gif"
-alt="Cute Teddy">
+alt="Teddy Bear">
 
-<h2 style="margin-bottom:20px;color:#444;">
-How are you feeling today?
-</h2>
+<p class="question">
 
-<div class="feeling-buttons">
+Before we continue...
 
-<button class="choice" onclick="showNext('😊 I\'m glad you're feeling okay. ❤️')">
-😊 I'm okay
+I just wanted to know how you're feeling today.
+
+No right or wrong answer.
+
+I just want to make sure you're okay. ❤️
+
+</p>
+
+<button class="choice" onclick="showResponse('good')">
+
+😊 I'm Feeling Better
+
 </button>
 
-<button class="choice" onclick="showNext('🥺 Aww... I wish I could give you a hug.')">
-🥺 Not great
+<button class="choice" onclick="showResponse('okay')">
+
+🙂 I'm Managing
+
 </button>
 
-<button class="choice" onclick="showNext('😭 I wish I was there to take care of you.')">
-😭 Really struggling
+<button class="choice" onclick="showResponse('bad')">
+
+🥺 Not Feeling Great
+
+</button>
+
+<div
+id="response"
+class="response hidden">
+
+</div>
+
+<button
+id="nextButton"
+class="hidden next"
+onclick="next('page3.html')">
+
+Continue 🌸
+
 </button>
 
 </div>
 
-<p id="response" style="margin-top:25px;font-size:18px;color:#ff4f93;font-weight:600;"></p>
-
-<button id="nextBtn"
-style="display:none;margin-top:25px;"
-onclick="location.href='page3.html'">
-
-Next ➜
-
-</button>
-
-</div>
+<script src="script.js"></script>
 
 <script>
 
-const text="Before anything else... I just wanted to know how you're feeling today. ❤️";
+function showResponse(answer){
 
-let i=0;
+const response=document.getElementById("response");
 
-function typing(){
+const nextBtn=document.getElementById("nextButton");
 
-if(i<text.length){
+response.classList.remove("hidden");
 
-document.getElementById("typing").innerHTML+=text.charAt(i);
+nextBtn.classList.remove("hidden");
 
-i++;
+if(answer==="good"){
 
-setTimeout(typing,45);
+response.innerHTML=
+
+"🧸 That makes Teddy really happy! ❤️ Let's keep that smile going.";
+
+}
+
+else if(answer==="okay"){
+
+response.innerHTML=
+
+"🌸 You're doing your best, and that's enough. Remember to rest whenever you need to. 💖";
+
+}
+
+else{
+
+response.innerHTML=
+
+"🥺 Aww... Teddy wishes he could give you the biggest hug right now. Don't worry, Juzer is always thinking about you. ❤️";
 
 }
 
 }
-
-typing();
-
-function showNext(msg){
-
-document.getElementById("response").innerHTML=msg;
-
-document.getElementById("nextBtn").style.display="inline-block";
-
-}
-
-function createHeart(){
-
-const heart=document.createElement("div");
-
-heart.classList.add("heart");
-
-heart.innerHTML="❤";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.fontSize=(15+Math.random()*25)+"px";
-
-heart.style.animationDuration=(4+Math.random()*5)+"s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-
-heart.remove();
-
-},8000);
-
-}
-
-setInterval(createHeart,350);
 
 </script>
 
