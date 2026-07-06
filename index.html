@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Beautiful Girl ❤️</title>
+<title>A Little Surprise ❤️</title>
 
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="hearts"></div>
+<div class="container fade">
 
-<div class="container">
+<div class="page">
+Page 1 of 4 💖
+</div>
 
-<h1 class="title">
-Hey Beautiful ❤️
-</h1>
+<div class="progress">
+<span style="width:25%"></span>
+</div>
+
+<h1>Hello Beautiful ❤️</h1>
+
+<img
+src="assets/gifs/200w.webp"
+class="gif"
+alt="Cute Teddy">
 
 <p id="typing"></p>
 
-<img
-class="gif"
-src="https://media.tenor.com/5Q6D4Q7P6S8AAAAC/cute-bear-love.gif"
-alt="Cute Teddy">
-
-<button onclick="location.href='page2.html'">
-💕 Start
+<button id="startBtn">
+Begin Our Little Journey 🌸
 </button>
 
 </div>
 
 <script src="script.js"></script>
 
+<script>
+
+const message =
+"🧸 Hi... I'm Juzer's little teddy bear! He asked me to take care of someone very special today. I know today might be a little difficult, but don't worry. I'll stay with you through this tiny journey and make sure you end it with a smile. ❤️";
+
+let i = 0;
+
+function type(){
+
+if(i < message.length){
+
+document.getElementById("typing").innerHTML += message.charAt(i);
+
+i++;
+
+setTimeout(type,35);
+
+}
+
+}
+
+type();
+
+document.getElementById("startBtn").onclick=function(){
+
+document.body.style.opacity="0";
+
+setTimeout(function(){
+
+window.location.href="page2.html";
+
+},500);
+
+}
+
+</script>
+
 </body>
+
 </html>
