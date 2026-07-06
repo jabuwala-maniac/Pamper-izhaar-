@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For You ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 class="title">
+❤️ A Little Message ❤️
+</h1>
+
+<img
+class="gif"
+src="https://media.tenor.com/3kNQ2S6jQzQAAAAC/bear-love.gif"
+alt="Cute Teddy">
+
+<div id="letter">
+
+<p>Thank you for answering my little questions. ❤️</p>
+
+<p>I know periods aren't easy.</p>
+
+<p>I know your body is going through a lot right now.</p>
+
+<p>I wish I could be beside you...</p>
+
+<p>Holding your hand.</p>
+
+<p>Giving you warm hugs.</p>
+
+<p>Making sure you're comfortable.</p>
+
+<p>Bringing you your favorite snacks.</p>
+
+<p>And reminding you that...</p>
+
+<h2 style="color:#ff4f93;">
+You are beautiful. ❤️
+</h2>
+
+<h2 style="color:#ff4f93;">
+You are strong. ❤️
+</h2>
+
+<h2 style="color:#ff4f93;">
+You are loved more than you know. ❤️
+</h2>
+
+<p>
+So today...
+</p>
+
+<p>
+Please don't worry about anything.
+</p>
+
+<p>
+Rest well.
+</p>
+
+<p>
+Drink some water.
+</p>
+
+<p>
+Take your medicines if needed.
+</p>
+
+<p>
+And remember...
+</p>
+
+<h2 style="color:#ff2d88;">
+
+I'm always here for you.
+
+❤️❤️❤️
+
+</h2>
+
+</div>
+
+<button onclick="hug()">
+
+🤗 Send Me A Hug
+
+</button>
+
+<h2 id="hugMessage"></h2>
+
+</div>
+
+<script>
+
+function hug(){
+
+document.getElementById("hugMessage").innerHTML=
+
+"❤️ Virtual Hug Delivered ❤️<br><br>I Love You So Much 🥹";
+
+createHearts();
+
+}
+
+function createHearts(){
+
+for(let i=0;i<80;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top=Math.random()*100+"vh";
+
+heart.style.fontSize=(20+Math.random()*25)+"px";
+
+heart.style.animation="pop 2s forwards";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),2000);
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
